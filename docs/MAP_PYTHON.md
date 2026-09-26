@@ -46,16 +46,16 @@ class Language(StrEnum):
 # File: src/goeddel/use/enums.py Line: 78
 class DiffLineType(StrEnum):
 
-# File: src/goeddel/use/zip_streamer.py Line: 17
+# File: src/goeddel/use/zip_streamer.py Line: 18
 class ChunkedZipStreamer:
 
-# File: src/goeddel/use/zip_streamer.py Line: 53
+# File: src/goeddel/use/zip_streamer.py Line: 54
 def deduplicate_paths(paths: list[str]) -> list[str]:
 
-# File: src/goeddel/use/zip_streamer.py Line: 73
+# File: src/goeddel/use/zip_streamer.py Line: 74
 def resolve_zip_selection(root_folder: RootFolder, snapshot: ?, paths: list[str]) -> tuple[(list[tuple[(str, str)]], list[str], list[str])]:
 
-# File: src/goeddel/use/zip_streamer.py Line: 153
+# File: src/goeddel/use/zip_streamer.py Line: 169
 def stream_zip_archive(root_folder: RootFolder, snapshot: ?, paths: list[str], base_folder_path: str="", structure_mode: StructureMode=..., compression: CompressionMode=...) -> Generator[(bytes, ?, ?)]:
 
 # File: src/goeddel/use/differ.py Line: 21
@@ -167,18 +167,21 @@ def can_read_real_path(real_path: str, username: ?) -> bool:
 def can_traverse_real_path(real_path: str, username: ?) -> bool:
 
 # File: src/goeddel/use/security.py Line: 451
+def identities_that_can_list(real_path: str, username: ?) -> frozenset[UserName]:
+
+# File: src/goeddel/use/security.py Line: 462
 def _ancestor_chain(dir_path: FilePath) -> list[str]:
 
-# File: src/goeddel/use/security.py Line: 463
+# File: src/goeddel/use/security.py Line: 474
 def _can_traverse_chain(root_folder: _RootFolderLike, dir_path: FilePath, snapshot: Snapshot, username: UserName) -> bool:
 
-# File: src/goeddel/use/security.py Line: 533
+# File: src/goeddel/use/security.py Line: 544
 def can_view_metadata(root_folder: _RootFolderLike, child_path: FilePath, snapshot: Snapshot, username: ?) -> bool:
 
-# File: src/goeddel/use/security.py Line: 549
+# File: src/goeddel/use/security.py Line: 560
 def can_access_child(root_folder: _RootFolderLike, child_path: FilePath, snapshot: Snapshot, username: ?) -> bool:
 
-# File: src/goeddel/use/security.py Line: 587
+# File: src/goeddel/use/security.py Line: 598
 def can_access(root_folder: _RootFolderLike, path: FilePath, snapshot: Snapshot, username: ?) -> bool:
 
 # File: src/goeddel/use/utils/path_resolver.py Line: 12
