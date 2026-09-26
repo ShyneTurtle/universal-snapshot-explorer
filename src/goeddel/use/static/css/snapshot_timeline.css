@@ -203,10 +203,13 @@
     width: calc(var(--tl-zoom, 1) * 100%);
 }
 
-/* Holds a timeline's snapshot bars, positioned in percent of the content's width. */
+/* Holds a timeline's snapshot bars, positioned in percent of the content's width.
+ * Its own stacking context, so a bar's z-index (e.g. the raised current one) only
+ * orders it among bars and never lifts it over the filter's range lines/handles. */
 .snapshot-timeline-bars {
     position: absolute;
     inset: 0;
+    z-index: 1;
 }
 
 .snapshot-timeline-axis {
@@ -367,7 +370,7 @@
     margin-left: -0.5px;
     background: var(--primary-accent);
     pointer-events: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 .snapshot-timeline-panel[data-layout='scrollbar-zoom'] .snapshot-timeline-range-line {
@@ -401,7 +404,7 @@
     width: var(--tl-handle-w);
     margin-left: calc(var(--tl-handle-w) / -2);
     cursor: ew-resize;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* DevTools-Network-style grab tab on the handle line, to signal "draggable" */
